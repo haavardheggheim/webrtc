@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<style>
+.videos-container {
+  display: inline-block;
+  padding: .1em;
+  border-radius: 0.2em;
+  margin: 2em .2em;
+  background: white;
+  vertical-align: top;
+}
+.videos-container h2 {
+  border: 0;
+  border-top: 1px solid black;
+  margin: 0;
+  text-align: center;
+  display:block;
+}
+video {
+  width:20em;
+  height: 15em;
+  background: black;
+}
+</style>
+
+</head>
+<body>
+
+<video id="pre-recorded-media" src="./big_buck_bunny.webm" controls autoplay muted style="display:none;"></video>
+
+<div style="text-align:center">
+	<button id="stream-pre-recorded-media">Stream-pre-recorded-media</button>
+</div>
+
+<script>
+document.getElementById('pre-recorded-media').addEventListener('loadedmetadata', function() {
+	document.getElementById('stream-pre-recorded-media').disabled = false;
+});
+</script>
+
+<div id="videos-container" style="text-align:center;display:none;">
+	<div class="videos-container">
+		<video id="peer2-to-peer1" autoplay></video>
+	</div>
+	<div class="videos-container">
+		<video id="peer1-to-peer2" autoplay></video>
+	</div>
+</div>
+
+
+<script src="main.js"></script>
+
+
+</body>
+</html>
